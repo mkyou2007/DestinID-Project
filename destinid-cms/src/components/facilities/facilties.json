@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_facilities_facilties",
+  "info": {
+    "displayName": "facilties",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

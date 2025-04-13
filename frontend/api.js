@@ -1,7 +1,33 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import DestinationCard from '../components/DestinationCard';
-import Recommendations from './Recommendations';
-import { getDestinations } from './api';
+
+const API_URL = 'http://localhost:1337/api'; // Strapi CMS
+const BACKEND_URL = 'http://localhost:5000/api'; // Express.js
+
+export const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export const backendApi = axios.create({
+  baseURL: BACKEND_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export const getDestinations = async () => {
+  const response = await api.get('/destinations?populate=*');
+  return response.data;
+};
+
+export const getRecommendations = async () => {
+  const response = await backendApi.get('/ml/recommendations');
+  return response.data;
+};
 
 const HomePage = () => {
   const [destinations, setDestinations] = useState([]);
@@ -31,9 +57,6 @@ const HomePage = () => {
           />
         ))}
       </div>
-
-      {/* Tambahkan komponen rekomendasi */}
-      <Recommendations />
     </div>
   );
 };

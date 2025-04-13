@@ -12,7 +12,10 @@ const limiter = rateLimit({
 app.use(limiter); // Apply rate limiting middleware
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // URL frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+}));
 app.use(express.json());
 
 // Routes
@@ -26,5 +29,7 @@ app.use('/api/ml', mlRoutes);
 app.get('/', (req, res) => {
   res.send('Backend DestinID Ready!');
 });
+
+
 
 module.exports = app;

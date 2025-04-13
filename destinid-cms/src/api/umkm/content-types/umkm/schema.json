@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "umkms",
+  "info": {
+    "singularName": "umkm",
+    "pluralName": "umkms",
+    "displayName": "Umkm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "umkmTitle": {
+      "type": "string",
+      "required": true
+    },
+    "umkmDescription": {
+      "type": "text",
+      "required": true
+    },
+    "umkmLocation": {
+      "type": "string",
+      "required": true
+    },
+    "umkmProducts": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

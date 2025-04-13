@@ -128,3 +128,6 @@ Data destinasi diambil dari TripAdvisor & Google Maps (lengkap di ATTRIBUTION.md
    - Buat versi bilingual (EN/ID) jika diperlukan
 
 README ini sudah mencakup semua aspek penting untuk proyek tim pemula sekaligus memenuhi standar dokumentasi yang profesional. 🚀
+
+
+http://localhost:5000/api/ml/recommendations

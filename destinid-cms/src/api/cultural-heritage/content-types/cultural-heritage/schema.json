@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cultural_heritages",
+  "info": {
+    "singularName": "cultural-heritage",
+    "pluralName": "cultural-heritages",
+    "displayName": "Cultural Heritage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "culturalTitle": {
+      "type": "string"
+    },
+    "culturalDescription": {
+      "type": "text",
+      "required": true
+    },
+    "culturalmages": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "culturalType": {
+      "type": "enumeration",
+      "enum": [
+        "[\"Artifact\", \"Tradition\", \"Architecture\"]"
+      ],
+      "default": "[\"Artifact\", \"Tradition\", \"Architecture\"]",
+      "required": true
+    }
+  }
+}
